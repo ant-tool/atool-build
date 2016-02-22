@@ -50,7 +50,7 @@
     "babel-jest": "~6.0.1",
     "coveralls": "~2.11.4",
     "eslint": "~1.10.3",
-    "eslint-config-airbnb": "~3.1.0",
+    "eslint-config-airbnb": "~6.0.2",
     "glob": "~6.0.4",
     "jest-cli": "~0.8.1",
     "jest.automockoff": "~0.1.0",
