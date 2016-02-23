@@ -33,6 +33,7 @@ function getWebpackConfig(args) {
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'production'),
     }),
     new webpack.optimize.DedupePlugin(),
+    new webpack.NoErrorsPlugin(),
   ];
 
   // Output map.json if hash.
