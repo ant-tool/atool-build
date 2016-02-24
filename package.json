@@ -28,7 +28,7 @@
     "babel-core-resolve-enhance": "~0.1.2",
     "babel-loader": "~6.2.0",
     "babel-plugin-add-module-exports": "~0.1.2",
-    "babel-plugin-typecheck": "~3.5.1",
+    "babel-plugin-typecheck": "~3.7.0",
     "babel-preset-es2015": "~6.3.13",
     "babel-preset-react": "~6.3.13",
     "babel-preset-stage-0": "~6.3.13",
