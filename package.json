@@ -23,7 +23,7 @@
     "lint"
   ],
   "dependencies": {
-    "autoprefixer": "~6.3.1",
+    "autoprefixer": "~6.3.2",
     "babel-core": "~6.3.17",
     "babel-core-resolve-enhance": "~0.1.2",
     "babel-loader": "~6.2.0",
