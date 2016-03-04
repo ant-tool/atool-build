@@ -13,5 +13,4 @@ program
   .option('--verbose', 'run with more logging messages.')
   .parse(process.argv);
 
-program.cwd = process.cwd();
 require('../lib/build')(program);

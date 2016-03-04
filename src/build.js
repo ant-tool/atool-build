@@ -5,7 +5,7 @@ import chalk from 'chalk';
 import mergeCustomConfig from './mergeCustomConfig';
 import getWebpackCommonConfig from './getWebpackCommonConfig';
 
-function getWebpackConfig(args) {
+export function getWebpackConfig(args) {
   let webpackConfig = getWebpackCommonConfig(args);
 
   webpackConfig.plugins = webpackConfig.plugins || [];
@@ -37,6 +37,11 @@ function getWebpackConfig(args) {
     new webpack.optimize.DedupePlugin(),
     new webpack.NoErrorsPlugin(),
   ];
+
+  // use current directory if cwd is not set
+  if (!args.cwd) {
+    args.cwd = process.cwd();
+  }
 
   // Output map.json if hash.
   if (args.hash) {
