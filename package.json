@@ -53,7 +53,7 @@
     "babel-polyfill": "6.6.x",
     "coveralls": "~2.11.4",
     "eslint": "~1.10.3",
-    "eslint-config-airbnb": "~3.1.0",
+    "eslint-config-airbnb": "~6.1.0",
     "glob": "~6.0.4",
     "expect": "~1.13.4",
     "mocha": "~2.3.4",
