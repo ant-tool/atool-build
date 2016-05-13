@@ -81,14 +81,14 @@ export default function getWebpackCommonConfig(args) {
           },
           loader: ExtractTextPlugin.extract(
             'css?sourceMap&-restructuring!' +
-            'postcss'
+            'postcss-loader'
           ),
         },
         {
           test: /\.module\.css$/,
           loader: ExtractTextPlugin.extract(
             'css?sourceMap&-restructuring&modules&localIdentName=[local]___[hash:base64:5]!' +
-            'postcss'
+            'postcss-loader'
           ),
         },
         {
@@ -97,7 +97,7 @@ export default function getWebpackCommonConfig(args) {
           },
           loader: ExtractTextPlugin.extract(
             'css?sourceMap!' +
-            'postcss!' +
+            'postcss-loader!' +
             `less-loader?{"sourceMap":true,"modifyVars":${JSON.stringify(pkg.theme || {})}}`
           ),
         },
@@ -105,7 +105,7 @@ export default function getWebpackCommonConfig(args) {
           test: /\.module\.less$/,
           loader: ExtractTextPlugin.extract(
             'css?sourceMap&modules&localIdentName=[local]___[hash:base64:5]!!' +
-            'postcss!' +
+            'postcss-loader!' +
             `less-loader?{"sourceMap":true,"modifyVars":${JSON.stringify(pkg.theme || {})}}`
           ),
         },
