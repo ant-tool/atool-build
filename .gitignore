@@ -3,6 +3,7 @@
 tmp
 node_modules/*
 test/fixtures/**/dist
+**/.cache
 coverage
 lib
 npm-debug.log
