@@ -48,6 +48,9 @@ describe('lib/build', function () {
   it('should support css modules', () => {
     return testBuild({}, 'build-css-modules');
   });
+  it('should support postcss', () => {
+    return testBuild({}, 'build-postcss');
+  });
   it('should support add-module-exports', () => {
     return testBuild({}, 'build-add-module-exports');
   });
