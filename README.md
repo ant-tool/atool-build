@@ -1,5 +1,7 @@
 # atool-build
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/ant-tool/atool-build.svg)](https://greenkeeper.io/)
+
 [![NPM version](https://img.shields.io/npm/v/atool-build.svg?style=flat)](https://npmjs.org/package/atool-build)
 [![Build Status](https://img.shields.io/travis/ant-tool/atool-build.svg?style=flat)](https://travis-ci.org/ant-tool/atool-build)
 [![Coverage Status](https://img.shields.io/coveralls/ant-tool/atool-build.svg?style=flat)](https://coveralls.io/r/ant-tool/atool-build)
