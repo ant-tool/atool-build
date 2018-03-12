@@ -73,6 +73,8 @@ function getWebpackConfig(args, cache) {
     ];
   }
 
+  injectLoaderOptions(webpackConfig, args);
+
   if (typeof args.config === 'function') {
     webpackConfig = args.config(webpackConfig) || webpackConfig;
   } else {
@@ -89,7 +91,6 @@ export default function build(args, callback) {
 
   let fileOutputPath;
   webpackConfig.forEach((config) => {
-    injectLoaderOptions(config, args);
     fileOutputPath = config.output.path;
   });
 
