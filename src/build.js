@@ -5,6 +5,7 @@ import chalk from 'chalk';
 import notifier from 'node-notifier';
 import mergeCustomConfig from './mergeCustomConfig';
 import getWebpackCommonConfig from './getWebpackCommonConfig';
+import monitor from './monitor';
 
 function checkConfig(webpackConfig) {
   const config = Array.isArray(webpackConfig) ? webpackConfig : [webpackConfig];
@@ -116,6 +117,12 @@ export default function build(args, callback) {
 
 
   function doneHandler(err, stats) {
+    process.nextTick(() => {
+      try {
+        monitor(args, stats);
+      } catch (_) { console.log(_.stack); }
+    });
+
     if (args.json) {
       const filename = typeof args.json === 'boolean' ? 'build-bundle.json' : args.json;
       const jsonPath = join(fileOutputPath, filename);

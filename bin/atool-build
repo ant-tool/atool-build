@@ -25,5 +25,3 @@ if (program.watch) {
     process.exit(0);
   });
 }
-
-require('atool-monitor').emit();
