@@ -7,3 +7,4 @@ coverage
 lib
 npm-debug.log
 *.lock
+run

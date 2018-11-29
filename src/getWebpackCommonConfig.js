@@ -7,6 +7,8 @@ import rucksack from 'rucksack-css';
 import autoprefixer from 'autoprefixer';
 import FriendlyErrorsWebpackPlugin from 'friendly-errors-webpack-plugin';
 import notifier from 'node-notifier';
+import BuildStatistics from 'build-statistics-webpack-plugin';
+import BigBrother from 'bigbrother-webpack-plugin';
 
 import getBabelCommonConfig from './getBabelCommonConfig';
 import getTSCommonConfig from './getTSCommonConfig';
@@ -16,6 +18,7 @@ import getTSCommonConfig from './getTSCommonConfig';
 export default function getWebpackCommonConfig(args) {
   const pkgPath = join(args.cwd, 'package.json');
   const pkg = existsSync(pkgPath) ? require(pkgPath) : {};
+  const atoolBuildPkg = require(join(__dirname, '../package.json'));
 
   const jsFileName = args.hash ? '[name]-[chunkhash].js' : '[name].js';
   const cssFileName = args.hash ? '[name]-[chunkhash].css' : '[name].css';
@@ -61,6 +64,8 @@ export default function getWebpackCommonConfig(args) {
     return obj;
   }, {});
 
+  // 时间分析产物文件地址
+  const stagesPath = join(__dirname, '../run/build-statistics/compilation.json');
 
   return {
 
@@ -200,6 +205,17 @@ export default function getWebpackCommonConfig(args) {
       }),
       new webpack.optimize.OccurenceOrderPlugin(),
       new CaseSensitivePathsPlugin(),
+      new BuildStatistics({
+        path: stagesPath,
+      }),
+      new BigBrother({
+        cwd: args.cwd,
+        tool: {
+          name: 'atool-build',
+          version: atoolBuildPkg.version,
+          stagesPath,
+        },
+      }),
       new FriendlyErrorsWebpackPlugin({
         onErrors: (severity, errors) => {
           if (silent) return;
