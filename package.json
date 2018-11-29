@@ -38,6 +38,8 @@
     "babel-preset-es2015-ie": "^6.7.0",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
+    "bigbrother-webpack-plugin": "^1.1.2",
+    "build-statistics-webpack-plugin": "^1.0.3",
     "case-sensitive-paths-webpack-plugin": "^2.0.0",
     "chalk": "^1.1.1",
     "commander": "~2.9.0",

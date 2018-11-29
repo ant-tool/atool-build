@@ -6,9 +6,8 @@
 }
 .a {
   color: '#ccc';
-  -webkit-transform: translateX(1);
-      -ms-transform: translateX(1);
-          transform: translateX(1);
+  -ms-transform: translateX(1);
+      transform: translateX(1);
 }
 .a .foo {
   position: absolute;
