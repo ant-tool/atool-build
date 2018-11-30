@@ -22,7 +22,9 @@ if (program.watch) {
   require('../lib/build')(program);
 } else {
   require('../lib/build')(program, function () {
-    process.exit(0);
+    setTimeout(function() {
+      process.exit(0);
+    }, 1000);
   });
 }
 
