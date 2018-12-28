@@ -168,7 +168,9 @@ export default function build(args, callback) {
     }
 
     if (callback) {
-      callback(err);
+      setTimeout(() => {
+        callback(err);
+      }, 1000);
     }
   }
 
