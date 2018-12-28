@@ -27,5 +27,3 @@ if (program.watch) {
     }, 1000);
   });
 }
-
-require('atool-monitor').emit();
