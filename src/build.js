@@ -3,6 +3,7 @@ import { writeFileSync } from 'fs';
 import webpack, { ProgressPlugin } from 'webpack';
 import chalk from 'chalk';
 import notifier from 'node-notifier';
+import notify from 'umi-notify';
 import mergeCustomConfig from './mergeCustomConfig';
 import getWebpackCommonConfig from './getWebpackCommonConfig';
 
@@ -89,6 +90,8 @@ function getWebpackConfig(args, cache) {
 }
 
 export default function build(args, callback) {
+  notify.onBuildStart({ name: 'atool-build', version: 1 });
+
   // Get config.
   let webpackConfig = getWebpackConfig(args, {});
   webpackConfig = Array.isArray(webpackConfig) ? webpackConfig : [webpackConfig];
@@ -116,6 +119,8 @@ export default function build(args, callback) {
 
 
   function doneHandler(err, stats) {
+    notify.onBuildComplete({ name: 'atool-build', version: 1 }, { err });
+
     if (args.json) {
       const filename = typeof args.json === 'boolean' ? 'build-bundle.json' : args.json;
       const jsonPath = join(fileOutputPath, filename);
