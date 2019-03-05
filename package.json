@@ -15,7 +15,8 @@
   "files": [
     "bin",
     "lib",
-    "assets"
+    "assets",
+    "deprecate.js"
   ],
   "scripts": {
     "build": "rm -rf lib && babel src --out-dir lib",
@@ -23,7 +24,8 @@
     "debug": "$(npm bin)/mocha --require babel-core/register --no-timeouts",
     "coveralls": "cat ./coverage/lcov.info | coveralls",
     "lint": "eslint --ext .js src",
-    "pub": "npm run build && npm publish && rm -rf lib && git push origin"
+    "pub": "npm run build && npm publish && rm -rf lib && git push origin",
+    "postinstall": "node deprecate.js"
   },
   "pre-commit": [
     "lint"
